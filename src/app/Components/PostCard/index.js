@@ -17,7 +17,8 @@ import {
     Form,
     FormGroup,
     Input,
-    Button
+    Button,
+    CardHeader
 } from 'reactstrap'
 
 import { CommentItem } from '../CommentItem'
@@ -43,15 +44,19 @@ export const PostCard = props => {
     //listAllComments is handled by a CTA at cards bottom
 
     const commentContent = listAllComments
-        ? comments.map(comment => <CommentItem key={comment.id} commentData={comment} />)
-        : <CommentItem commentData={comments[0]} />
+        ? comments.map((comment, index) => <CommentItem key={comment.id} commentData={comment} commentIndex = { index }/>)
+        : <CommentItem commentData={comments[0]} commentIndex = { 0 } />
 
     return (
         <Card className="mb-3 shadow">
             <CardBody>
-                <CardTitle tag="h5" className="text-blue text-capitalize">{title}</CardTitle>
-                <CardText>{body}</CardText>
-                <p className="text-muted text-right mb-0">{comments.length} comments</p>
+                <img src={`http://placeimg.com/600/600/tech?t=${id}`} alt="" />
+                <div>
+                    <CardTitle tag="h5" className="text-blue text-capitalize">{title}</CardTitle>
+                    <CardText>{body}</CardText>
+                    <p className="text-muted text-right mb-0">{comments.length} comments</p>
+                </div>
+                
             </CardBody>
             <CardFooter className="p-3">
                 <ListGroup>
