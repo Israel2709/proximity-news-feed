@@ -3,3 +3,12 @@
 *{
   color:$main-gray
 }
+
+.text-{
+  &blue{
+    color: $main-blue
+  }
+  &pink{
+    color: $pink;
+  }
+}

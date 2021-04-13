@@ -1,0 +1,14 @@
+@import '../../../assets/css/variables.scss';
+
+.comment-box{
+    .name{
+        text-transform:capitalize;
+    }
+    .content{
+        font-size:.875rem
+    }
+    .email{
+        font-style:italic;
+        font-size:.75rem;
+    }
+}

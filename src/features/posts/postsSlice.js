@@ -15,23 +15,7 @@ export const fetchPosts = createAsyncThunk( 'posts/fetchPosts', async () => {
 const postsSlice = createSlice({
     name: 'posts',
     initialState,
-    reducers: {
-        postAdded: {
-            reducer(state, action) {
-                state.posts.push(action.payload)
-            },
-            prepare(title, content, userId) {
-                return {
-                    payload: {
-                        title,
-                        content,
-                        userId
-                    }
-                }
-            }
-
-        },
-    },
+    reducers: {},
     extraReducers: {
         [fetchPosts.pending]: (state, action) => {
             state.status = 'loading'

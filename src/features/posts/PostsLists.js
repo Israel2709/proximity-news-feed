@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectAllPosts, fetchPosts } from './postsSlice'
+import { selectAllComments, fetchComments } from '../comments/commentsSlice'
 
 import { Link } from 'react-router-dom'
 import { Spinner } from '../../app/Components/Spinner'
@@ -8,27 +9,39 @@ import { PostCard } from '../../app/Components/PostCard'
 
 export const PostsList = () => {
     const dispatch = useDispatch()
+
     const posts = useSelector( selectAllPosts )
     const postStatus = useSelector( state => state.posts.status )
-    const error = useSelector( state => state.posts.error)
+
+    const comments = useSelector( selectAllComments )
+
+    const commentStatus = useSelector( state => state.comments.status)
 
     let content
 
     if ( postStatus === 'loading' ) {
         content = <Spinner />
-    } else if ( postStatus === 'succeeded' ) {
+    } else if ( postStatus === 'succeeded' && commentStatus === 'succeeded') {
         content = posts.map( post => (
-            <PostCard postData = { post } />
+            <PostCard 
+                key={post.id} 
+                postData = { post } 
+                comments = { comments.filter( comment => comment.postId === post.id)}
+            />
         ))
-    } else if (postStatus === 'failed') {
-        content = <div>{error}</div>
-    }
+    } 
 
-    useEffect(() => {
+    useEffect( () => {
         if ( postStatus === 'idle' ) {
             dispatch( fetchPosts() )
         }
     }, [postStatus, dispatch] )
+
+    useEffect( () => {
+        if ( commentStatus === 'idle' ) {
+            dispatch( fetchComments() )
+        }
+    }, [commentStatus, dispatch])
 
     return(
         <div>

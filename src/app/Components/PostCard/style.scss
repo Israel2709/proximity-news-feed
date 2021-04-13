@@ -1,7 +1,11 @@
 @import '../../../assets/css/variables.scss';
 
 .card{
-    .card-title{
-        color:$main-blue
+    .show-comments{
+        font-size:.75rem;
+        cursor:pointer;
+        &:hover{
+            color:$main-blue
+        }
     }
 }
