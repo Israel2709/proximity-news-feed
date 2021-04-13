@@ -1,8 +1,12 @@
+// wrapper to simplify AJAX requests
+
 export async function client(endpoint, { body, ...customConfig } = {}) {
     const headers = { 'Content-Type': 'application/json' }
   
     const config = {
-      method: body ? 'POST' : 'GET',
+      // if no body provided, the wrappers assumes a 'GET' request
+      // otherwhise assumes a 'POST' request
+      method: body ? 'POST' : 'GET', 
       ...customConfig,
       headers: {
         ...headers,

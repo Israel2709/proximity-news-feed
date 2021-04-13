@@ -1,3 +1,5 @@
+//Component to show a single comment
+
 import './style.scss'
 
 import {

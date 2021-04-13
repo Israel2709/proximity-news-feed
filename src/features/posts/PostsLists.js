@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { selectAllPosts, fetchPosts } from './postsSlice'
 import { selectAllComments, fetchComments } from '../comments/commentsSlice'
 
-import { Link } from 'react-router-dom'
 import { Spinner } from '../../app/Components/Spinner'
 import { PostCard } from '../../app/Components/PostCard'
 
@@ -19,6 +18,7 @@ export const PostsList = () => {
 
     let content
 
+    //Show a spinner while fetching the data
     if ( postStatus === 'loading' ) {
         content = <Spinner />
     } else if ( postStatus === 'succeeded' && commentStatus === 'succeeded') {

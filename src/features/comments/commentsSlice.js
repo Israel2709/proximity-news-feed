@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, nanoid } from '@reduxjs/toolkit'
 import { client } from '../../api/client'
 
 const initialState = {
@@ -15,7 +15,26 @@ export const fetchComments = createAsyncThunk( 'comments/fetchComments', async (
 const commentsSlice = createSlice({
     name: 'comments',
     initialState,
-    reducers: {},
+    reducers: {
+        commentAdded: {
+            reducer( state, action ){
+                console.log( action.payload )
+                state.comments.push( action.payload)
+            },
+            prepare( body, postId ){
+                return {
+                    payload:{
+                        postId,
+                        id: nanoid(),
+                        name: "Israel Salinas Martínez",
+                        email: "israel.salinas.m@gmail.com",
+                        body
+                    }
+                    
+                }
+            }
+        }
+    },
     extraReducers: {
         [fetchComments.pending]: (state, action) => {
             state.status = 'loading'
@@ -30,6 +49,8 @@ const commentsSlice = createSlice({
         }
     }
 })
+
+export const { commentAdded } = commentsSlice.actions
 
 export default commentsSlice.reducer
 
