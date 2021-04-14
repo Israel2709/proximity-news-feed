@@ -18,7 +18,6 @@ import {
     FormGroup,
     Input,
     Button,
-    CardHeader
 } from 'reactstrap'
 
 import { CommentItem } from '../CommentItem'
@@ -74,7 +73,7 @@ export const PostCard = props => {
             </CardFooter>
             <Form className="m-3">
                 <FormGroup className="d-flex mb-0">
-                    <Input placeholder="Write a comment" onChange={onBodyChanged} />
+                    <Input placeholder="Write a comment" onChange={onBodyChanged} value = { commentBody }/>
                     <Button type="button" color="primary" onClick={saveComment} disabled={!commentBody}>Comment</Button>
                 </FormGroup>
             </Form>

@@ -9,8 +9,8 @@ import {
 } from 'reactstrap'
 
 export const CommentItem = props => {
-    const { name, email, body, id } = props.commentData
-    const {commentIndex} = props
+    const { name, email, body } = props.commentData
+    const { commentIndex } = props
 
     return (
         <ListGroupItem>
