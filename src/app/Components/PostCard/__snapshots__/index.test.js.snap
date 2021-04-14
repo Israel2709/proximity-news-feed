@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders when a post has comments 1`] = `
+<div
+  className="mb-3 shadow card"
+>
+  <div
+    className="card-body"
+  >
+    <img
+      alt=""
+      src="http://placeimg.com/600/600/tech?t=1"
+    />
+    <div>
+      <h5
+        className="text-blue text-capitalize card-title"
+      >
+        sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+      </h5>
+      <p
+        className="card-text"
+      >
+        quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto
+      </p>
+      <p
+        className="text-muted text-right mb-0"
+      >
+        1
+         comments
+      </p>
+    </div>
+  </div>
+  <div
+    className="p-3 card-footer"
+  >
+    <ul
+      className="list-group"
+    >
+      <li
+        className="list-group-item"
+      >
+        <div
+          className="comment-box"
+        >
+          <h6
+            className="name text-blue"
+          >
+            <img
+              alt=""
+              className="avatar"
+              src="avatar-1.jfif"
+            />
+            id labore ex et quam laborum
+          </h6>
+          <p
+            className="content"
+          >
+            laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium
+          </p>
+          <p
+            className="email text-right text-pink mb-0"
+          >
+            Eliseo@gardner.biz
+          </p>
+        </div>
+      </li>
+    </ul>
+    <span
+      className="show-comments text-right mt-2 mb-0"
+      onClick={[Function]}
+    >
+      See 
+      0
+       more comments
+    </span>
+  </div>
+  <form
+    className="m-3"
+  >
+    <div
+      className="d-flex mb-0 form-group"
+    >
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Write a comment"
+        type="text"
+        value=""
+      />
+      <button
+        aria-label={null}
+        className="btn btn-primary disabled"
+        disabled={true}
+        onClick={[Function]}
+        type="button"
+      >
+        Comment
+      </button>
+    </div>
+  </form>
+</div>
+`;
