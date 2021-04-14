@@ -26,6 +26,10 @@ Bootstrap / ReactStrap were used to achieve full responsiveness, along with some
 - **reactstrap**
 - **node-sass**
 
+# Dev dependencies
+
+- **react-test-renderer**
+
 *Once cloned, run `npm install` in order to install all the dependencies listed above* 
 
 # What could be added to this project?
